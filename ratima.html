@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratima Salon | ร้านเสริมสวยรติมา ซาลอน หาดใหญ่</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Modern Minimalist CSS Variables */
+        :root {
+            --bg-color: #FAFAFA;
+            --card-bg: #FFFFFF;
+            --text-main: #2C2C2C;
+            --text-muted: #707070;
+            --accent: #C5A089; /* Warm Nude/Beige */
+            --accent-hover: #A8836C;
+            --border: #E8E8E8;
+            --font-main: 'Prompt', sans-serif;
+            --font-heading: 'Playfair Display', 'Prompt', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 300;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: #FFF;
+            padding: 14px 36px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .service-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #F4F4F4;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Ratima Salon</a>
+            <ul class="nav-links">
+                <li><a href="#services">บริการ</a></li>
+                <li><a href="#contact">ติดต่อเรา</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Ratima Salon</h1>
+            <p>สัมผัสประสบการณ์ดูแลเส้นผมอย่างปราณีตและผ่อนคลาย ในสไตล์มินิมอล ณ หาดใหญ่</p>
+            <a href="#contact" class="btn">ติดต่อสอบถามข้อมูล</a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>บริการและอัตราค่าบริการ</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>สระ-ไดร์ & ออกแบบทรงผม</h3>
+                    <p>บริการตัดและออกแบบทรงผมให้เข้ากับรูปหน้า พร้อมบริการสระผ่อนคลายด้วยผลิตภัณฑ์พรีเมียม</p>
+                    <div class="service-price">เริ่มต้น ฿350</div>
+                </div>
+                <div class="service-card">
+                    <h3>ทำสีผม Organic & Fashion</h3>
+                    <p>เปลี่ยนสีผมตามสไตล์คุณ ด้วยผลิตภัณฑ์ถนอมเส้นผม ลดเคมีสะสม ให้สีสวยเงางาม</p>
+                    <div class="service-price">เริ่มต้น ฿1,500</div>
+                </div>
+                <div class="service-card">
+                    <h3>ดัดดิจิตอล / ยืดวอลลุ่ม</h3>
+                    <p>เนรมิตลอนผมสวยเป็นธรรมชาติ หรือยืดตรงนุ่มลื่น ไม่ลีบแบน ดำเนินการโดยช่างผู้เชี่ยวชาญ</p>
+                    <div class="service-price">เริ่มต้น ฿2,000</div>
+                </div>
+                <div class="service-card">
+                    <h3>ทรีทเม้นท์ฟื้นฟูเส้นผม</h3>
+                    <p>บำรุงล้ำลึกสำหรับผมแห้งเสีย ปรับโครงสร้างผมให้กลับมาแข็งแรง เงางามมีน้ำหนัก</p>
+                    <div class="service-price">เริ่มต้น ฿800</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>สถานที่ตั้งและข้อมูลติดต่อ</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>ร้านเสริมสวยรติมา ซาลอน (Hat Yai)</h3>
+                    <p><strong>ที่อยู่:</strong> 22 Rajuthit Soi 19 Rd, Hat Yai, Hat Yai District, Songkhla 90110</p>
+                    <p><strong>เวลาทำการ:</strong> เปิดบริการทุกวัน 08:00 - 20:00 น.</p>
+                    <p><strong>โทรศัพท์:</strong> 093-813-5833</p>
+                </div>
+                <div style="background-color: #EEE; border-radius: 8px; min-height: 200px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: 300; overflow: hidden;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.007732348356!2d100.4586166!3d7.0083716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d28662f5b6f89%3A0x3ec0f9d1c02d92e7!2z4Lij4LiV4Li04Lih4LiyIOC4i-C4suC4peC4reC4mQ!5e0!3m2!1sen!2sth!4v1793177267827!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ratima Salon Hat Yai. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
