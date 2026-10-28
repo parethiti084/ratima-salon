@@ -4,7 +4,7 @@
 
 ## 🌐 เว็บไซต์ออฟฟิเชียล
 สามารถเข้าชมเว็บไซต์หลักของร้านได้ที่: 
-👉 [Ratima Salon Website](https://github.com/parethiti084/ratima-salon)
+👉 [Ratima Salon Website](https://parethiti084.github.io/ratima-salon/)
 
 
 ---
